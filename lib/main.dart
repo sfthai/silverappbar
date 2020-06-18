@@ -28,9 +28,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: MediaQuery.of(context).size.height / 3,
+            expandedHeight: (MediaQuery.of(context).size.height / 3),
             pinned: true,
-            backgroundColor: Colors.transparent,
+            elevation: 50,
+            backgroundColor: Colors.white,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
               title: Row(
@@ -51,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.normal,
-                        color: Colors.green),
+                        color: Colors.pink),
                   ),
                   Expanded(
                     child: Container(
@@ -150,6 +151,60 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           SliverList(
               delegate: SliverChildListDelegate([
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
             SizedBox(height: 5),
             Container(
               width: double.infinity,
