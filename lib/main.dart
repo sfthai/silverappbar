@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradient_text/gradient_text.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,97 +27,153 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ClipPath(
-        clipper: MyClipper(),
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              expandedHeight: 200.0,
-              pinned: true,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Text('SilverAppBar'),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            expandedHeight: MediaQuery.of(context).size.height / 3,
+            pinned: true,
+            backgroundColor: Colors.transparent,
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              title: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      height: 2,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: <Color>[
+                          Color(0xFF2508FF),
+                          Color(0xFFFF1000)
+                        ]),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    " All Songs ",
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.green),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 2,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: <Color>[
+                          Color(0xFF2508FF),
+                          Color(0xFFFF1000)
+                        ]),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              background: ClipPath(
+                clipper: MyClipper(),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  height: MediaQuery.of(context).size.height / 2,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Color(0xFF3383CD),
+                        Color(0xFF11249F),
+                      ],
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          SizedBox(
+                            height: (MediaQuery.of(context).size.height / 2) -
+                                ((MediaQuery.of(context).size.height / 2) /
+                                    1.5),
+                          ),
+                          Text(
+                            "Devotional Songs - Tamil",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
-            SliverList(
-                delegate: SliverChildListDelegate([
-              SizedBox(height: 5),
-              Container(
-                width: double.infinity,
-                height: 50,
-                color: Colors.red,
-              ),
-            ]))
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //     Container(
-            //       width: double.infinity,
-            //       height: 50,
-            //       color: Colors.red,
-            //     ),
-            //     SizedBox(height: 5),
-            //   ]),
-            // )
-          ],
-        ),
+          ),
+          SliverList(
+              delegate: SliverChildListDelegate([
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+            SizedBox(height: 5),
+            Container(
+              width: double.infinity,
+              height: 50,
+              color: Colors.red,
+            ),
+          ]))
+        ],
       ),
     );
   }

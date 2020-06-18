@@ -56,6 +56,12 @@
       "languageVersion": "2.2"
     },
     {
+      "name": "gradient_text",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/gradient_text-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.6",
       "packageUri": "lib/",
@@ -134,7 +140,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-06-18T14:07:34.833486Z",
+  "generated": "2020-06-18T15:32:49.623880Z",
   "generator": "pub",
   "generatorVersion": "2.9.0-14.0.dev.flutter-2b917f5b6a"
 }
