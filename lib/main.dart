@@ -9,11 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: ThemeData(primaryColor: Colors.red),
       home: MyHomePage(),
     );
   }
@@ -68,45 +66,85 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
               ),
-              background: ClipPath(
-                clipper: MyClipper(),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  height: MediaQuery.of(context).size.height / 2,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Color(0xFF3383CD),
-                        Color(0xFF11249F),
-                      ],
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Row(
+              background: Stack(
+                children: [
+                  ClipPath(
+                    clipper: MyClipper(),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      height: MediaQuery.of(context).size.height / 2,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [
+                            Color(0xFF3383CD),
+                            Color(0xFF11249F),
+                          ],
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          SizedBox(
-                            height: (MediaQuery.of(context).size.height / 2) -
-                                ((MediaQuery.of(context).size.height / 2) /
-                                    1.5),
-                          ),
-                          Text(
-                            "Devotional Songs - Tamil",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
-                              color: Colors.white,
-                            ),
+                          Row(
+                            children: <Widget>[
+                              SizedBox(
+                                height: (MediaQuery.of(context).size.height /
+                                        2) -
+                                    ((MediaQuery.of(context).size.height / 2) /
+                                        1.5),
+                              ),
+                              Text(
+                                "Devotional Songs - Tamil",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 25,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                  Positioned(
+                    top: (MediaQuery.of(context).size.height / 2) -
+                        ((MediaQuery.of(context).size.height / 2) / 1.5),
+                    left: 25,
+                    child: Column(
+                      children: <Widget>[
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {});
+                          },
+                          child: ClipOval(
+                            child: Container(
+                              color: Colors.red,
+                              width: 50,
+                              height: 50,
+                              child: Center(
+                                child: Icon(
+                                  Icons.play_arrow,
+                                  color: Colors.white,
+                                  size: 50,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Play All",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
